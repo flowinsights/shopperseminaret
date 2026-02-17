@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopperseminaret 2026 – Vekst som varer</title>
+    <meta name="description" content="Halvdags frokostseminar for aktører i norsk varehandel. 5. mars 2026, Forskningsparken, Oslo.">
+    <meta property="og:title" content="Shopperseminaret 2026 – Vekst som varer">
+    <meta property="og:description" content="Et halvdags frokostseminar for norsk varehandel. 5. mars, Forskningsparken, Oslo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shopperseminaret.no">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0f172a;
+            --blue: #2b6cb0;
+            --mint: #10b981;
+            --slate: #64748b;
+            --slate-light: #94a3b8;
+            --off-white: #f8fafc;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+            background: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── Nav ── */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        nav .container {
+            display: flex; justify-content: space-between; align-items: center; height: 52px;
+        }
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700; font-size: 16px; color: var(--navy); text-decoration: none;
+        }
+        .nav-cta {
+            background: var(--navy); color: #fff; padding: 8px 20px; border-radius: 100px;
+            font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--blue); }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 72px 0 40px;
+            background: var(--navy);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -40%; right: -15%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero .container { position: relative; z-index: 1; }
+        .hero-top {
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-left { flex: 1; min-width: 300px; }
+        .hero-right {
+            flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end;
+            gap: 12px; padding-top: 8px;
+        }
+        .hero-tag {
+            font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+            text-transform: uppercase; color: var(--mint); margin-bottom: 12px;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(28px, 4.5vw, 44px);
+            font-weight: 700; line-height: 1.1; margin-bottom: 6px;
+        }
+        .hero h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(16px, 2.5vw, 22px);
+            font-weight: 400; color: var(--slate-light); margin-bottom: 16px;
+        }
+        .hero-desc {
+            font-size: 14px; color: var(--slate-light); max-width: 520px; line-height: 1.6;
+        }
+        .btn-primary {
+            display: inline-block; background: var(--mint); color: #fff;
+            padding: 14px 36px; font-size: 15px; font-weight: 600;
+            text-decoration: none; border-radius: 100px; transition: all 0.3s;
+            border: none; cursor: pointer; white-space: nowrap;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16,185,129,0.3);
+        }
+        .hero-meta-pills {
+            display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;
+        }
+        .pill {
+            font-size: 12px; padding: 5px 12px; border-radius: 100px;
+            background: rgba(255,255,255,0.08); color: var(--slate-light);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ── Two-col layout ── */
+        .two-col {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+            padding: 48px 0;
+        }
+
+        .section-label {
+            font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+            text-transform: uppercase; color: var(--blue); margin-bottom: 10px;
+        }
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px; font-weight: 700; margin-bottom: 20px; line-height: 1.2;
+        }
+
+        /* ── Learn points ── */
+        .learn-list { list-style: none; }
+        .learn-list li {
+            padding: 8px 0 8px 20px; position: relative;
+            font-size: 14px; border-bottom: 1px solid var(--border);
+        }
+        .learn-list li:last-child { border-bottom: none; }
+        .learn-list li::before {
+            content: "→"; position: absolute; left: 0; color: var(--blue); font-weight: bold;
+        }
+
+        /* ── Program ── */
+        .program-item {
+            display: flex; gap: 16px; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .program-item:last-child { border-bottom: none; }
+        .program-time {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700; font-size: 13px; color: var(--blue);
+            min-width: 46px; padding-top: 1px;
+        }
+        .program-title { font-weight: 600; font-size: 14px; }
+        .program-speaker { color: var(--slate); font-size: 12px; margin-top: 2px; }
+        .program-break { color: var(--slate-light); font-style: italic; font-size: 13px; }
+        .not-streamed {
+            margin-top: 12px; font-size: 12px; font-weight: 600;
+            color: #b45309; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* ── Speakers ── */
+        .speakers-section {
+            background: var(--off-white); padding: 40px 0;
+        }
+        .speakers-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+        }
+        .speaker { text-align: center; }
+        .speaker-photo {
+            width: 100px; height: 100px; border-radius: 16px;
+            margin: 0 auto 10px; overflow: hidden; background: var(--border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--slate-light); font-size: 12px;
+        }
+        .speaker-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .speaker h4 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 14px; margin-bottom: 2px;
+        }
+        .speaker .speaker-role {
+            font-size: 12px; color: var(--slate); line-height: 1.4;
+        }
+
+        /* ── Info + CTA row ── */
+        .bottom-section {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+        }
+        .info-section { padding: 40px; padding-left: 0; }
+        .info-row {
+            display: flex; gap: 12px; padding: 6px 0; font-size: 13px;
+        }
+        .info-label {
+            font-weight: 600; min-width: 100px; color: var(--slate);
+        }
+
+        .cta-section {
+            background: var(--navy); color: #fff; padding: 40px;
+            border-radius: 20px; margin: 24px 0;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .cta-section .section-label { color: var(--mint); }
+        .cta-section .section-title { color: #fff; font-size: 20px; margin-bottom: 16px; }
+        .registration-form { text-align: left; }
+        .form-row { display: flex; gap: 10px; margin-bottom: 10px; }
+        .form-group { flex: 1; }
+        .form-group label {
+            display: block; font-size: 12px; margin-bottom: 4px; color: var(--slate-light);
+        }
+        .form-group input {
+            width: 100%; padding: 10px 12px; font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
+            background: rgba(255,255,255,0.06); color: #fff; transition: all 0.2s;
+        }
+        .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+        .form-group input:focus {
+            outline: none; border-color: var(--mint); background: rgba(255,255,255,0.1);
+        }
+        .registration-form .btn-primary {
+            width: 100%; margin-top: 6px; padding: 12px; font-size: 14px;
+        }
+        .form-note {
+            text-align: center; margin-top: 8px; font-size: 11px; color: var(--slate-light);
+        }
+
+        /* ── Footer ── */
+        footer {
+            padding: 24px 0; text-align: center; border-top: 1px solid var(--border);
+        }
+        footer p { color: var(--slate); font-size: 13px; }
+        footer a { color: var(--blue); text-decoration: none; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .two-col { grid-template-columns: 1fr; gap: 32px; }
+            .bottom-section { grid-template-columns: 1fr; }
+            .cta-section { margin: 0; border-radius: 0; }
+            .info-section { padding: 32px 0; }
+            .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-right { align-items: flex-start; }
+        }
+        @media (max-width: 480px) {
+            .form-row { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="nav-logo">Shopperseminaret 2026</a>
+            <a href="#pamelding" class="nav-cta">Be om plass</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-top">
+                <div class="hero-left">
+                    <p class="hero-tag">📅 5. mars 2026 &nbsp; ⏰ 09:00–12:30 &nbsp; 📍 Forskningsparken, Oslo</p>
+                    <h1>Shopperseminaret 2026</h1>
+                    <h2>Shoppability: vekst som varer - i et marked i motvind</h2>
+                    <p class="hero-desc">For kommersielle ledere hos kjeder og leverandører i norsk retail.</p>
+                </div>
+                <div class="hero-right" style="align-items:center; text-align:center;">
+                    <a href="#pamelding" class="btn-primary">Be om plass</a>
+                    <p style="font-size:12px; color:var(--slate-light); margin-top:10px;">Begrensede plasser</p>
+                    <p style="font-size:12px; color:var(--slate-light); margin-top:2px;">850,- per deltaker</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Why section -->
+    <section style="padding: 40px 0 0;">
+        <div class="container">
+            <p class="section-label">Hvorfor et shopperseminar?</p>
+            <p style="font-size:14px; max-width:720px; color:var(--slate); line-height:1.7;">
+                Det investeres betydelige ressurser i å skape trafikk til butikk, men langt mindre i det som faktisk avgjør salget: shoppability og selve handleopplevelsen. Resultatet er et stort og ofte usynlig konverteringsgap. Når shoppability er lav taper alle: leverandører som ikke får uttelling for gode produkter, kjeder som mister salg fra kunder som allerede er i butikken, og ikke minst fra kundene selv - som gir opp underveis.
+            </p>
+            <p style="font-size:15px; max-width:720px; color:var(--navy); font-weight:600; margin-top:16px;">
+                👉 Dette er en stor vekstmulighet som vi ønsker å sette fokus på!
+            </p>
+            <p style="font-size:14px; max-width:720px; color:var(--slate); line-height:1.7; margin-top:16px;">
+                Vår erfaring er at mange beslutningstakere i fysisk retail også savner en faglig arena med høy praktisk relevans. Derfor inviterer vi til Shopperseminaret: en møteplass for konkrete eksempler, nye perspektiver og diskusjoner om hvordan vi kan redusere konverteringsgapet i butikk.
+            </p>
+        </div>
+    </section>
+
+    <!-- Learn + Program side by side -->
+    <div class="container">
+        <div class="two-col">
+            <div>
+                <p class="section-label">Hva du vil lære</p>
+                <ul class="learn-list">
+                    <li>Hvorfor konvertering – ikke bare trafikk – er den største vekstmuligheten i modne kategorier og markeder</li>
+                    <li>Hvordan skape vekst av innsikt</li>
+                    <li>Hvordan konverteringsstrategier virker (og feiler)</li>
+                    <li>Caser fra Diplom-IS og Telenor</li>
+                </ul>
+            </div>
+            <div>
+                <p class="section-label">Program</p>
+                <div class="program-item">
+                    <div class="program-time">09:00</div>
+                    <div><div class="program-title">Ankomst, nybrygget kaffe, frokost</div></div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">09:30</div>
+                    <div>
+                        <div class="program-title">Plattformlansering: hva 10 år med konverteringsmålinger har lært oss</div>
+                        <div class="program-speaker">Øyvind Christensen, FLOW Insights</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">10:05</div>
+                    <div>
+                        <div class="program-title">How we buy: Building incremental growth that lasts – from attention to basket</div>
+                        <div class="program-speaker">Keith Sleight, SPiRO</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">11:05</div>
+                    <div><div class="program-break">Pause og påfyll av kaffe/te/snacks</div></div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">11:20</div>
+                    <div>
+                        <div class="program-title">Vekst i et fallende marked: Telenor-caset</div>
+                        <div class="program-speaker">Erik Meier Nilsen, Telenorbutikkene</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">11:40</div>
+                    <div>
+                        <div class="program-title">Leverandør-Kjede-samarbeid i iskrem</div>
+                        <div class="program-speaker">Kay Nilsen, Diplom-IS</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">12:10</div>
+                    <div><div class="program-title">Q&A og avslutning</div></div>
+                </div>
+                <p class="not-streamed">Seminaret blir ikke streamet</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Speakers -->
+    <section class="speakers-section">
+        <div class="container">
+            <p class="section-label">Foredragsholdere</p>
+            <div class="speakers-grid">
+                <div class="speaker">
+                    <div class="speaker-photo"><img src="images/Keith.jpeg" alt="Keith Sleight"></div>
+                    <h4>Keith Sleight</h4>
+                    <p class="speaker-role">SPiRO UK. Tidl. global shopper-leder i Unilever, Mondelez og Cadbury. 25+ års erfaring.</p>
+                </div>
+                <div class="speaker">
+                    <div class="speaker-photo"><img src="images/Øyvind.jpeg" alt="Øyvind Christensen"></div>
+                    <h4>Øyvind Christensen</h4>
+                    <p class="speaker-role">Grunnlegger, FLOW Insights. 10 år med kartlegging av norske kjøpsøyeblikk og tapt salg.</p>
+                </div>
+                <div class="speaker">
+                    <div class="speaker-photo"><img src="images/Erik.jpg" alt="Erik Meier Nilsen"></div>
+                    <h4>Erik Meier Nilsen</h4>
+                    <p class="speaker-role">Leder, Telenorbutikkene. Telenors retailtransformasjon gjennom markedsnedgang.</p>
+                </div>
+                <div class="speaker">
+                    <div class="speaker-photo"><img src="images/Kay.jpeg" alt="Kay Nilsen"></div>
+                    <h4>Kay Nilsen</h4>
+                    <p class="speaker-role">Key Account Manager, Diplom-IS. Leverandør-kjede-samarbeid i sesongbasert kategori.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info + Registration side by side -->
+    <div class="container">
+        <div class="bottom-section">
+            <div class="info-section">
+                <p class="section-label">Praktisk informasjon</p>
+                <div class="section-title" style="font-size:18px;">Det du trenger å vite</div>
+                <div class="info-row">
+                    <span class="info-label">Dato:</span>
+                    <span>Torsdag 5. mars 2026, 09:00–12:30</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Sted:</span>
+                    <span>Forskningsparken, Oslo</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Parkering:</span>
+                    <span>Parkering i kjelleren. T-bane: Blindern / Forskningsparken</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Kostnad:</span>
+                    <span>850,- per deltaker (inkl. frokost og forfriskninger)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Plasser:</span>
+                    <span>Begrenset</span>
+                </div>
+            </div>
+            <div class="cta-section" id="pamelding">
+                <p class="section-label">Påmelding</p>
+                <div class="section-title">Be om plass</div>
+                <form class="registration-form" action="https://formspree.io/f/xkovbejv" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Navn *</label>
+                            <input type="text" id="name" name="name" placeholder="Fullt navn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-post *</label>
+                            <input type="email" id="email" name="email" placeholder="din@epost.no" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Firma *</label>
+                            <input type="text" id="company" name="company" placeholder="Firma AS" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Stilling</label>
+                            <input type="text" id="position" name="position" placeholder="Valgfritt">
+                        </div>
+                    </div>
+                    <input type="hidden" name="_subject" value="Forespørsel om plass – Shopperseminaret 2026">
+                    <button type="submit" class="btn-primary">Send forespørsel</button>
+                    <p class="form-note">Du får svar innen 48 timer.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Arrangert av <a href="https://flowinsights.com" target="_blank">FLOW Insights</a> · <a href="https://flowinsights.com" target="_blank">www.flowinsights.com</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
